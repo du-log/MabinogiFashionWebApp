@@ -1,29 +1,20 @@
-# vue_web_app
+# Mabinogi Fashion (Looking for name recommendations!)
+**This is currently a work in progress, and overall design is subject to change over time.**  
+**Also, looking for volunteers! Send me a message if you'd like to help out.**
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a web application designed for Mabinogi players to share their fashion ideas to other fashionistas.  
+We all know fashion in the real endgame, so what better way to show how good your Milletian looks than a catalog? It could be previous outfits that you put together or even cosplay. Maybe you want to wear something that you wore in the past, but forgot what the pieces were. You'll be able to see all of that here.  
+The goal is to have a relatively centralized website for the North America region that we can all browse for clothing ideas, however if there is some success, then I would like it to branch out to the other regions as well.
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
+### Current features:
+```
+- Account login and creation (alpha, subjec)
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
+### Planned features: 
 ```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
+- Fashion catalog page (not started)
+- Design uploading (not started)
+- Personal profile (not started)
+- 
 ```
