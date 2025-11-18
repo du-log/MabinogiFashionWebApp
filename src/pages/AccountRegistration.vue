@@ -3,32 +3,64 @@ import {ref} from 'vue'
 const email = ref('')
 const username = ref('')
 const password = ref('')
-const error = ref('')
-const success = ref('')
+const feedback = ref({
+  error: '',
+  success: '',
+  attempt: ''
+})
 
 const registrationUrl = 'http://localhost:9090/register'
 
 const createAccount = async () => {
-  error.value = ''
-  success.value = ''
+  showMessage('error', '')
+  showMessage('success', '')
+  showMessage('attempt', 'Attempting to register...')
   try {
-    const response = await fetch(registrationUrl, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({email: email.value, username: username.value, password: password.value})
-    })
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-  } catch (error) {
-    error.value = (error as Error).message
-  } finally {
-    success.value = 'Account created successfully.'
-    redirect()
+    await registerRequest(email.value, username.value, password.value)
+    showMessage('attempt', '', 0)
+    showMessage('success', 'Account created successfully! Redirecting to login...', 1500)
+    setTimeout(() => redirect(), 2000)
+  } catch (err) {
+    showMessage('attempt', '', 0)
+    showMessage('error', (err as Error).message)
   }
 
   function redirect() {
     window.location.href="/login"
+  }
+
+  function showMessage(type: 'error' | 'success' | 'attempt', message: string, duration = 1500) {
+    feedback.value[type] = message
+    if (duration > 0) {
+      setTimeout(() => {
+        feedback.value[type] = ''
+      }, duration)
+    }
+  }
+
+  async function registerRequest(email: string, username: string, password: string) {
+    if(email === null || username === null || username === '') {
+      throw new Error('One or more fields are empty')
+    }
+    const response = await fetch(registrationUrl, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, username, password })
+    })
+
+    let data: any = {}
+    try {
+      const text = await response.text()
+      if (text) data = JSON.parse(text)
+    } catch (_) {
+      data = {}
+    }
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Unable to create account')
+    }
+
+    return data
   }
 }
 
@@ -52,6 +84,10 @@ const createAccount = async () => {
           <p>Account Password</p>
           <input type="password" placeholder="Password" v-model="password" required />
         </div>
+
+        <div v-if="feedback.attempt" id="attempt-div">{{ feedback.attempt }}</div>
+        <div v-if="feedback.error" id="error-div">{{ feedback.error }}</div>
+        <div v-if="feedback.success" id="success-div">{{ feedback.success }}</div>
       </div>
 
       <div class="register-or-login-redirect">
@@ -62,6 +98,7 @@ const createAccount = async () => {
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
@@ -72,12 +109,12 @@ p, a {
 
 .main-container {
   margin: 3rem auto;
-  padding: 2rem;
+  padding: 3rem;
   display: flex;
   gap: 2rem;
   flex-direction: column;
-  background-color: #90ee90;
-  max-width: 800px;
+  background-color: #d3d3d3;
+  max-width: 25rem;
   border-radius: 20px;
 }
 
@@ -107,7 +144,7 @@ p, a {
   border: solid 3px #ffffff;
   border-radius: 20px;
   color: #ffffff;
-  background-color: #008000;
+  background-color: #00990075;
   transition: background-color 0.1s ease-out;
 }
 
@@ -119,11 +156,11 @@ p, a {
 
 #existing-account-container p, a {
   margin: 0 auto;
+  color: #008000;
 }
 
 #existing-account-container a {
   text-decoration: none;
-  color: #008000;
 }
 
 #existing-account-container a:hover {
@@ -135,10 +172,11 @@ p, a {
   flex-direction: column;
   margin: 0 auto;
   padding: 3rem;
-  background-color: #90ee90;
+  background-color: #00990075;
   border: 5px solid #ffffff;
   border-radius: 10px;
   gap: 1rem;
+  height: 23rem;
 }
 
 .account-input-container #input {
@@ -154,5 +192,26 @@ p, a {
 
 #input input {
   width: 200px;
+}
+
+#error-div, #success-div, #attempt-div {
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+#attempt-div {
+  color: #ffff00;
+  background-color: #777700;
+}
+
+#error-div {
+  color: #ff0000;
+  background-color: #770000;
+}
+
+#success-div {
+  color: #00ff00;
+  background-color: #007700;
 }
 </style>

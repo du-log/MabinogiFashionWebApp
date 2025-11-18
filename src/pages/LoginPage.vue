@@ -4,46 +4,51 @@ import {useAuthStore} from "@/stores/authStore";
 
 const email = ref('')
 const password = ref('')
-const error = ref('')
-const success = ref('')
-const isLoading = ref(false)
+const isActive = ref(false)
+
+const feedback = ref({
+  error: '',
+  success: '',
+  attempt: ''
+})
 
 const authStore = useAuthStore()
 
-const authenticateUrl = 'http://localhost:9090/authenticate'
-
 const submitLogin = async () => {
-  isLoading.value = true
-  error.value = ''
-  success.value = ''
+  showMessage('error', '')
+  showMessage('success', '')
+  showMessage('attempt', 'Attempting to login...')
 
   try {
-    const response = await fetch(authenticateUrl, {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({email: email.value, password: password.value}),
-    })
-
-    if (!response.ok) {
-      throw new Error('Login failed.');
+    if (!email.value || !password.value) {
+      throw new Error('Missing email or password')
     }
+    isActive.value = true
+    await authStore.loginRequest(email.value, password.value)
+    showMessage('success', 'Success! Redirecting...', 1500)
+    showMessage('attempt', '', 0) // clear attempt immediately
 
-    const data = await response.json();
-    const token = data.token;
+    //redirect()
+    setTimeout(() => redirect(), 2000)
+  } catch (err) {
+    showMessage('attempt', '', 0)
+    showMessage('error', (err as Error).message, 3000)
 
-    authStore.login(token)
-
-    success.value = 'Login successful!'
-
-    redirect()
-  } catch (error) {
-    error.value = (error as Error).message;
   } finally {
-    isLoading.value = false;
+    isActive.value = false
   }
 
   function redirect() {
     window.location.href = '/'
+  }
+
+  function showMessage(type: 'error' | 'success' | 'attempt', message: string, duration = 1500) {
+    feedback.value[type] = message
+    if (duration > 0) {
+      setTimeout(() => {
+        feedback.value[type] = ''
+      }, duration)
+    }
   }
 }
 </script>
@@ -51,33 +56,35 @@ const submitLogin = async () => {
 <template>
 
   <div id="container">
-
     <div class="main">
-
       <a id="header-img" href="/"><img src="/celtic-knot.png" alt="Click to return home"></a>
-
       <h1>Sign In</h1>
 
       <div class="sub">
         <div class="sub-field">
           <p>Email</p>
-          <input type="text" id="email-input" name="email" placeholder="Email Address" v-model="email"/>
+          <input type="text" id="email-input" name="email" placeholder="Email Address" v-model="email" required />
         </div>
         <div class="sub-field">
           <p>Password</p>
-          <input type="password" id="password-input" name="password" placeholder="Password" v-model="password"/>
+          <input type="password" id="password-input" name="password" placeholder="Password" v-model="password" required />
         </div>
         <div id="sub-options">
           <a href="#">Forgot Password?</a>
-          <button id="submit-button" @click="submitLogin" :disabled="isLoading">
-            {{ isLoading ? 'Logging in...' : 'Submit' }}
-          </button>
+          <button id="submit-button" @click="submitLogin" :disabled="isActive">Submit</button>
         </div>
-        <div v-if="error" style="color:red; margin-top: 10px;">
-          {{ error }}
-        </div>
-        <div v-if="success" style="color:green; margin-top: 10px;">
-          {{ success }}
+        <div id="box">
+          <div id="feedback-type">
+            <div v-if="feedback.attempt" id="attempt">
+              {{ feedback.attempt }}
+            </div>
+            <div v-if="feedback.error" id="error">
+              {{ feedback.error }}
+            </div>
+            <div v-if="feedback.success" id="success">
+              {{ feedback.success }}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -138,14 +145,14 @@ h1 {
 }
 
 .main {
-  border-radius: 5px;
+  border-radius: 20px;
   margin: 3rem auto;
   padding: 3rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   background-color: #d3d3d3;
-  max-width: 800px;
+  max-width: 25rem;
 }
 
 .sub {
@@ -177,7 +184,8 @@ h1 {
 
 .sub #sub-options {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sub input {
@@ -230,6 +238,46 @@ h1 {
 
 .low a:hover {
   color: #ffffff;
+}
+
+#box {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+#feedback-type {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  margin: 0 auto;
+  z-index: 1;
+  top: -1rem
+}
+
+#attempt, #success, #error {
+  border-radius: 10px;
+  padding: 5px;
+  top: 0;
+  left: 0;
+}
+
+#attempt {
+  color: #ffff00;
+  background-color: #777700;
+}
+
+#success {
+  color: #00ff00;
+  background-color: #007700;
+}
+
+#error {
+  color: #ff0000;
+  background-color: #770000;
 }
 
 </style>

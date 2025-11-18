@@ -1,59 +1,35 @@
 <script setup lang="ts">
 
-import ArticleList from "@/components/ArticleList.vue";
 </script>
 
 <template>
 
-  <div id="main-grid-container">
+  <div id="main-container">
 
-    <main class="main-content">
-
-      <p>
-        The standard Lorem Ipsum passage, used since the 1500s
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-        Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-
-        1914 translation by H. Rackham
-        "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
-
-        Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
-        "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
-
-        1914 translation by H. Rackham
-        "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
-      </p>
-
-    </main>
-
-    <aside class="right-aside">
-      <ArticleList />
-    </aside>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus posuere odio in lorem porttitor accumsan. Nunc ac sapien quis nisi porttitor fermentum. Vivamus nec ultrices tortor, eu eleifend nisi. Phasellus vehicula nisi eget lorem ultrices, non pulvinar odio scelerisque. Donec eget magna lobortis, egestas ligula nec, rhoncus metus. Ut placerat nulla et nulla tempus, eget cursus lacus auctor. Sed id metus feugiat nunc volutpat pellentesque. Vivamus venenatis, mauris nec dignissim lobortis, augue dolor fermentum nisl, vel ultricies eros purus non nulla. Vivamus molestie pulvinar velit, vitae ornare sem. Nullam eleifend posuere consectetur. Quisque varius quis erat sit amet varius. Donec eu dolor quis nisl finibus consectetur venenatis non quam. Aliquam libero eros, consectetur quis turpis quis, euismod viverra nibh.
+      Duis sit amet nibh sit amet ligula lacinia posuere. Donec euismod sagittis eleifend. Aenean aliquet erat facilisis nibh tempor tincidunt. Nullam vitae sapien vitae velit fringilla congue tempor et metus. Vivamus et nulla imperdiet, gravida tortor et, mattis nisi. Nam nisl neque, facilisis et ipsum in, lobortis fermentum diam. Ut sit amet efficitur arcu. Mauris a nisi a lorem suscipit lobortis.
+      Aliquam posuere sagittis nisi eu efficitur. Suspendisse ornare ante a massa aliquam eleifend id eget purus. Maecenas quis urna sit amet lorem venenatis iaculis at sed leo. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam at elit nec nisl malesuada dictum vel et ante. Ut in neque gravida, tristique metus eget, blandit lectus. Nulla ullamcorper eros sit amet scelerisque iaculis. Donec hendrerit convallis interdum. Suspendisse ultrices quis turpis eu facilisis. Maecenas egestas dui arcu, a dictum tellus condimentum nec. Cras maximus sem eu sagittis malesuada. In viverra nisi quam, sed ultricies libero volutpat eu. Integer aliquet molestie ligula. Fusce eu convallis augue, sit amet dignissim nulla.
+      Nam aliquet massa finibus libero accumsan bibendum. Proin in hendrerit libero. Sed diam eros, fringilla eget tincidunt sed, placerat quis est. Suspendisse consectetur ante ut velit ultricies pulvinar. Mauris non porta nibh, at sodales magna. Suspendisse maximus justo lacus, vulputate tristique orci cursus non. In sed bibendum elit. Quisque ultrices a nunc vel dapibus. Phasellus velit enim, interdum vel risus in, cursus laoreet nibh. Donec eget est nec dolor malesuada scelerisque ut vitae enim. Cras egestas pulvinar risus quis aliquam.
+      Pellentesque convallis vel ex eu porttitor. Vestibulum tempor faucibus elit, nec sagittis enim finibus sed. Etiam mattis metus ac massa scelerisque, in ultrices orci posuere. In mi nibh, fringilla eu dapibus mollis, aliquet a massa. Sed hendrerit a velit et dignissim. Integer in mi congue, porta lacus nec, placerat erat. Cras facilisis ac massa quis viverra.
+      Proin auctor tristique velit, sit amet semper risus aliquam sed. Donec eleifend, orci sit amet dignissim vehicula, velit felis bibendum nulla, ut venenatis lorem nisl ac augue. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis tincidunt pretium finibus. Pellentesque vel porta dolor, eu pulvinar dui. Mauris vehicula nisi id dui pretium, et porttitor ex maximus. Maecenas sit amet sem ut velit pretium convallis. Cras tincidunt, ipsum sed vulputate tristique, massa urna volutpat dui, eget ornare felis mi id ligula. In hac habitasse platea dictumst. Suspendisse justo nulla, vulputate ornare tortor sed, sodales luctus elit. Fusce in malesuada erat. In mattis convallis urna quis tempor. Duis semper ut mi a ultricies. Cras consequat, purus tempus rhoncus venenatis, nisi dui viverra sem, in porttitor diam turpis in tellus. Vivamus volutpat sollicitudin neque, ac pulvinar diam finibus in. Mauris fringilla, sem nec elementum lacinia, nulla felis viverra ligula, lobortis porttitor lacus lacus sit amet sapien.
+      Etiam vitae mollis orci, a blandit velit. Aenean tincidunt purus purus, ac efficitur ipsum aliquet vel. Donec sed imperdiet nisl. Nunc consectetur sapien sed libero fermentum mattis. Donec ullamcorper libero in tortor ullamcorper, ut facilisis elit fringilla. Fusce ultricies pulvinar dui nec gravida. Aliquam metus tellus, vestibulum id tellus in, ultrices pretium elit. Duis nulla tortor, faucibus nec efficitur in, commodo sit amet eros. Nunc blandit laoreet elit, non dictum purus laoreet et. Suspendisse sit amet sapien eros.
+      Sed dapibus, urna eu gravida aliquet, nunc neque lobortis dui, nec consequat tellus ligula nec augue. Phasellus mattis est id hendrerit ultricies. Sed facilisis rhoncus ligula sit amet maximus. Vivamus commodo hendrerit faucibus. Sed volutpat turpis est, eget egestas felis eleifend sed. Pellentesque scelerisque ligula nec felis varius scelerisque. Sed condimentum velit sit amet pretium tempor. Aliquam ac fringilla nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean urna ipsum, eleifend sed erat in, pellentesque lacinia magna. Nullam congue rhoncus ligula at lacinia. Morbi varius interdum neque, sed maximus ligula. Aenean feugiat iaculis odio vel tempus.
+      Maecenas dapibus, neque et posuere auctor, augue dui rutrum nibh, in congue libero justo sit amet orci. Duis sapien enim, commodo bibendum convallis a, vestibulum vitae lacus. Nulla auctor turpis id mauris faucibus lacinia. Sed dolor turpis, iaculis ut massa rhoncus, semper tristique urna. Phasellus ac cursus mauris. Ut eget enim at tortor lacinia porta. Phasellus nibh lorem, imperdiet eu posuere non, pulvinar vel elit. Praesent in euismod enim. Pellentesque consectetur, velit quis lacinia venenatis, velit massa facilisis quam, et mattis erat nunc id felis. Curabitur ac lobortis enim. Donec laoreet arcu ac ultricies egestas. Nulla vel cursus arcu. Nullam ac erat sodales, bibendum arcu nec, condimentum odio. Vestibulum rhoncus facilisis dolor nec aliquam. Praesent in risus eu massa ultricies ullamcorper ut et dui.
+      Ut pellentesque non enim vel efficitur. Sed posuere iaculis consequat. Sed euismod enim ac dui interdum porttitor vel ut tellus. Nulla pulvinar ligula ac imperdiet mattis. Proin metus leo, pulvinar non rhoncus in, pharetra sollicitudin ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis finibus dapibus augue, fermentum semper ligula fringilla id. Sed ipsum turpis, viverra sed elit vitae, lobortis ullamcorper arcu. Nam luctus mauris at nisi gravida semper. Nam auctor ac augue at vestibulum. Quisque malesuada ultrices dolor, sit amet elementum erat volutpat sit amet. Nullam posuere enim quis felis efficitur, in pulvinar tortor cursus.
+      Donec nec erat pulvinar, semper purus ultrices, dignissim nulla. Morbi sed dictum massa, non scelerisque nunc. Quisque neque mauris, feugiat eu nulla vel, congue sodales augue. Donec blandit nisi in risus fermentum fringilla. Sed sagittis ante eget turpis maximus eleifend. Fusce maximus blandit egestas. Aliquam hendrerit risus non dui maximus feugiat. Donec dignissim nibh risus, nec suscipit nunc volutpat quis. In blandit blandit hendrerit. In rutrum ante nisi, et porttitor lacus facilisis eu. Duis eu arcu lacus. Maecenas ultrices felis eu consectetur iaculis.
+      Sed ac ex eu nisl convallis dignissim. Proin finibus vulputate neque, id ultrices quam fringilla sit amet. Mauris ac nibh ex. Sed porttitor lacinia varius. Morbi vel iaculis diam. Nulla convallis tristique orci quis eleifend. Mauris viverra magna feugiat sem scelerisque, in facilisis nunc accumsan. Morbi risus felis, laoreet id vulputate vitae, sodales ut ex. Proin euismod ut neque non molestie. Nulla placerat, ligula ac volutpat aliquet, dolor enim consequat velit, tristique scelerisque urna nisl vel urna. Cras varius auctor sollicitudin. Sed feugiat metus eu lacus laoreet elementum.
+      Suspendisse hendrerit tristique sem a sollicitudin. Cras faucibus pretium sem, pellentesque pulvinar quam malesuada in. Integer dui lacus, consequat non ligula eget, viverra suscipit eros. Duis faucibus diam ut interdum facilisis. Suspendisse imperdiet arcu ut erat lacinia, ut euismod odio bibendum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur porta condimentum dolor, at gravida metus efficitur quis. Mauris ornare lacus eget iaculis vulputate. Donec pharetra pharetra ex, id iaculis urna tempus eu.
+      Sed dictum eros id augue pretium, sed auctor orci egestas. Maecenas porttitor elit vitae mi ornare feugiat. Etiam pretium diam vehicula risus pharetra, id iaculis metus dignissim. Aenean ligula diam, consectetur at hendrerit at, fermentum ullamcorper turpis. Etiam varius, nisl ut dictum pulvinar, eros nibh mollis neque, vel efficitur orci massa id orci. Nunc efficitur urna id ipsum viverra pulvinar. Vestibulum ac ipsum in nibh laoreet suscipit eget ut enim.
+      Etiam quis iaculis tortor, et accumsan mauris. Donec rhoncus sapien quis luctus ullamcorper. Vestibulum sit amet odio vehicula, maximus erat eget, gravida velit. Maecenas sit amet ex tempus, gravida diam sit amet, ultrices massa. In cursus eros et tortor ultricies pellentesque. Fusce sed metus volutpat, iaculis erat in, hendrerit diam. Proin venenatis nunc arcu, ut varius nisi sollicitudin a. Etiam aliquet suscipit augue eget vestibulum. Cras at massa vitae urna aliquet iaculis. Praesent gravida eros lectus, in imperdiet lectus dictum eget.
+    </p>
 
   </div>
 
 </template>
 
 <style scoped>
-
-#main-grid-container {
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  min-height: 100vh;
-  gap: 1rem;
-  justify-content: end;
-  align-items: stretch;
+p {
+  font-size: 1.2rem;
 }
-
-.main-content {
-  display: flex;
-  flex-direction: column;
-
-  border-color: #FFF;
-  border-style: solid;
-  border-width: 2px;
-}
-
 </style>

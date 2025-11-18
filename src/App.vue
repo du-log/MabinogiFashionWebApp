@@ -1,10 +1,19 @@
 <script setup>
 import {computed} from "vue"
 import {useRoute} from "vue-router"
-import Navbar from "./components/Navbar.vue"
+import Navbar from "@/components/Navbar.vue"
+import { onMounted } from 'vue'
+import { useAuthStore } from "@/stores/authStore";
 
 const route = useRoute()
 const hideNavbar = computed(() => route.meta?.hideNavbar)
+const authStore = useAuthStore()
+
+onMounted(() => {
+  if (authStore.token) {
+    authStore.fetchCurrentUser()
+  }
+})
 </script>
 export default {
 components: { Navbar }
