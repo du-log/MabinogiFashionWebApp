@@ -1,4 +1,5 @@
 # Mabinogi Fashion (Looking for name recommendations!)
+## Note: Project is currently on hold.
 **This is currently a work in progress, and overall design is subject to change over time.**  
 **Send me a message if you would like to help out. I can't pay anything though, but I'd appreciate any help.**
 
